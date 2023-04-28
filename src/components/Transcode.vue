@@ -3,7 +3,6 @@
   import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg'
   import { useColorMode } from '@vueuse/core'
 
-
   const themeMode = useColorMode() // Ref<'dark' | 'light'>
   const ffmpeg = createFFmpeg({
     log: true,
@@ -91,6 +90,24 @@
     let mbByte = byte / 1048576
     return Math.floor(mbByte * 10) / 10
   }
+
+  type progressFormatterProps = {
+    currentValue: number,
+    currentRawValue: number,
+    duration: number,
+    previousCountStepValue: number,
+    start: number,
+    end: number,
+    difference: number,
+    oneStepDifference: number,
+    startTime: Date,
+    elapsed: number,
+  };
+  type progressFormatter = (props: progressFormatterProps) => string;
+
+  const progressFormatter : progressFormatter = ({ currentValue }) => {
+    return `${currentValue}%`;
+  }
 </script>
 
 <template>
@@ -134,7 +151,7 @@
       <div class="mb-12 flex justify-center" v-if="progress >= 0">
         <ve-progress
           :progress="progress"
-          :legend-formatter="({ currentValue }) => `${currentValue}%`"
+          :legend-formatter="progressFormatter"
           color="#f97316"
           emptyColor="#CCC"
         />
