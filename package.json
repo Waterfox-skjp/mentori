@@ -9,12 +9,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.47"
+    "@ffmpeg/core": "^0.11.0",
+    "@ffmpeg/ffmpeg": "^0.11.6",
+    "@vueuse/core": "^10.1.0",
+    "material-icons": "^1.13.6",
+    "vue": "^3.2.47",
+    "vue-ellipse-progress": "^2.1.1",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.23",
+    "sass": "^1.62.0",
     "tailwindcss": "^3.3.1",
     "typescript": "^4.9.3",
     "vite": "^4.2.0",
