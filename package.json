@@ -15,6 +15,7 @@
     "material-icons": "^1.13.6",
     "vue": "^3.2.47",
     "vue-ellipse-progress": "^2.1.1",
+    "vue-final-modal": "^4.4.2",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {

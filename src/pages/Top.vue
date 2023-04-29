@@ -1,7 +1,30 @@
 <script setup lang="ts">
+  import { onMounted } from 'vue'
+  import { ModalsContainer, useModal } from 'vue-final-modal'
+  import { useStorage } from '@vueuse/core'
   import HeaderComponentTop from '../components/HeaderComponentTop.vue'
   import Transcode from '../components/Transcode.vue'
   import FooterComponent from '../components/FooterComponent.vue'
+  import ModalTerms from '../components/ModalTerms.vue'
+
+  const { open, close } = useModal({
+    component: ModalTerms,
+    attrs: {
+      clickToClose: false,
+      escToClose: false,
+      onConfirm() {
+        close()
+      },
+    }
+  })
+
+  const agreementFlag = useStorage('agreement-flag', false)
+
+  onMounted(() => {
+    if (!agreementFlag.value) {
+      open()
+    }
+  })
 </script>
 
 <template>
@@ -10,4 +33,5 @@
     <Transcode/>
   </main>
   <FooterComponent/>
+  <ModalsContainer />
 </template>
