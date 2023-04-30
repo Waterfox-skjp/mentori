@@ -7,6 +7,7 @@
   import FooterComponent from '../components/FooterComponent.vue'
   import ModalTerms from '../components/ModalTerms.vue'
 
+  // モーダル設定
   const { open, close } = useModal({
     component: ModalTerms,
     attrs: {
@@ -18,8 +19,10 @@
     }
   })
 
+  // 承諾モーダルのローカルストレージチェック
   const agreementFlag = useStorage('agreement-flag', false)
 
+  // 未承諾の場合はモーダルを開く
   onMounted(() => {
     if (!agreementFlag.value) {
       open()

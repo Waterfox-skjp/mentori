@@ -6,6 +6,7 @@
     (e: 'confirm'): void
   }>()
 
+  // 承諾モーダル バインディング用
   const agreementFlag = useStorage('agreement-flag', false)
 </script>
 

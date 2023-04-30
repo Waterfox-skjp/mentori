@@ -4,8 +4,9 @@
   import { useColorMode } from '@vueuse/core'
 
   const themeMode = useColorMode() // Ref<'dark' | 'light'>
+
   const ffmpeg = createFFmpeg({
-    log: true,
+    log: false,
   })
   const inputVideoEl = ref<any>(null)
   let inputVideo = ref('')
@@ -18,6 +19,10 @@
   let transcodeFlag = ref(false)
   let isDragOver = ref(false)
 
+  /**
+   * inputに変更があった場合の処理
+   * @param e
+   */
   const onChange = (e: any) => {
     let file = e.target.files[0]
     if (file.type.indexOf('mp4') != -1 || file.type.indexOf('quicktime') != -1 || file.type.indexOf('x-matroska') != -1) {
@@ -37,14 +42,24 @@
     }
   }
 
+  /**
+   * ドラッグ処理
+   * @param type
+   */
   const onDrag = (type: string) => {
     isDragOver.value = type === 'over'
   }
 
+  /**
+   * ドロップ処理
+   */
   const onDrop = () => {
     isDragOver.value = false
   }
 
+  /**
+   * 圧縮処理
+   */
   const transcode = async () => {
     transcodeFlag.value = false
     if (!ffmpeg.isLoaded()) {
@@ -65,6 +80,9 @@
     transcodeFlag.value = true
   }
 
+  /**
+   * 状態リセット処理
+   */
   const reset = () => {
     inputVideo.value = ''
     outputVideo.value = ''
@@ -72,6 +90,10 @@
     transcodeFlag.value = false
   }
 
+  /**
+   * ファイルネーム取得処理
+   * @param str
+   */
   const baseName = (str: string) => {
     let base = new String(str).substring(str.lastIndexOf('/') + 1);
     if (base.lastIndexOf('.') != -1)
@@ -79,6 +101,9 @@
     return base;
   }
 
+  /**
+   * ビットレート計算処理
+   */
   const bitrateCalc = () => {
     const duration: number = parseInt(inputVideoEl.value.duration)
     let bitrate: number = (((24956108 / duration) / 128) * 10) / 10 - 96; // 23.8MBベースで計算
@@ -86,11 +111,18 @@
     return bitrate
   }
 
+  /**
+   * メガバイト表記処理
+   * @param byte
+   */
   const mbByteCalc = (byte: number) => {
     let mbByte = byte / 1048576
     return Math.floor(mbByte * 10) / 10
   }
 
+  /**
+   * プログレス表示処理
+   */
   type progressFormatterProps = {
     currentValue: number,
     currentRawValue: number,
@@ -104,7 +136,6 @@
     elapsed: number,
   };
   type progressFormatter = (props: progressFormatterProps) => string;
-
   const progressFormatter : progressFormatter = ({ currentValue }) => {
     return `${currentValue}%`;
   }
