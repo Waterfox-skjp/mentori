@@ -114,7 +114,8 @@
             <li>Eメールアドレス：<a href="mailto:waterfox@live.jp">waterfox@live.jp</a></li>
           </ul>
         </section>
-        <p class="text-right">以上</p>
+        <p class="mb-6 text-right">以上</p>
+        <p class="text-right">制定日：2023年5月1日</p>
       </div>
     </div>
   </main>

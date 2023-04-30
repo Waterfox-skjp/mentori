@@ -172,7 +172,7 @@
         </section>
         <section class="mb-3">
           <h3>第13条（個人情報の取扱い）</h3>
-          <p>事業者が本アプリ又は本サービスの利用によって取得する個人情報の取扱いについては本規約には規定せず、事業者が別途定めるプライバシーポリシーに従うものとします。プライバシーポリシーの内容は下記リンクから確認できます：<a href="https://mentori-video.web.app/privacy-policy" target="_blank">https://mentori-video.web.app/privacy-policy</a></p>
+          <p>事業者が本アプリ又は本サービスの利用によって取得する個人情報の取扱いについては本規約には規定せず、事業者が別途定めるプライバシーポリシーに従うものとします。プライバシーポリシーの内容は下記リンクから確認できます：<a href="https://mentori-video.web.app/privacy-policy/" target="_blank">https://mentori-video.web.app/privacy-policy/</a></p>
         </section>
         <section class="mb-3">
           <h3>第14条（通知又は連絡）</h3>
@@ -204,7 +204,7 @@
           <h3>第19条（合意管轄）</h3>
           <p>本規約、本アプリ、又は本サービスに関する一切の紛争については千葉地方裁判所を第一審の専属的管轄裁判所とします。</p>
         </section>
-        <p class="text-right">制定日：2023年05月01日</p>
+        <p class="text-right">制定日：2023年5月1日</p>
       </div>
     </div>
     <button class="mx-auto w-9/12 max-w-xs py-2.5 block rounded-full bg-orange-500 hover:bg-orange-700 transition duration-300 text-white font-bold" @click="emit('confirm')">
