@@ -81,7 +81,7 @@
 
   const bitrateCalc = () => {
     const duration: number = parseInt(inputVideoEl.value.duration)
-    let bitrate: number = (((26214400 / duration) / 128) * 10) / 10 - 96; // 23.8MBベースで計算
+    let bitrate: number = (((24956108 / duration) / 128) * 10) / 10 - 96; // 23.8MBベースで計算
     bitrate = Math.ceil(bitrate)
     return bitrate
   }

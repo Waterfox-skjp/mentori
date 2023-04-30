@@ -10,9 +10,16 @@ const routes = [
     }
   },
   {
-    path: '/privacy-policy',
+    path: '/terms/',
+    name: 'terms',
+    component: async () => {
+      const terms = await import('../pages/Terms.vue');
+      return terms;
+    }
+  },
+  {
+    path: '/privacy-policy/',
     name: 'privacy-policy',
-    strict: true,
     component: async () => {
       const privacypolicy = await import('../pages/Privacypolicy.vue');
       return privacypolicy;

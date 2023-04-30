@@ -31,7 +31,7 @@ export default ({ mode }) => {
         manifest: {
           name: 'Mentori | Discord向け動画圧縮ツール',
           short_name: 'Mentori',
-          description: '「Mentori」はDiscord向け動画圧縮ツールです。通常Discordの無料版では最大25MBの動画しかアップロードすることができません。この「Mentori」では1ドロップ・1クリックで8MBへの動画圧縮を可能にします。',
+          description: '「Mentori」はDiscord向け動画圧縮ツールです。通常Discordの無料版では最大25MBの動画しかアップロードすることができません。この「Mentori」では1ドロップ・1クリックで25MBへの動画圧縮を可能にします。',
           theme_color: '#F97316',
           icons: [
             {
