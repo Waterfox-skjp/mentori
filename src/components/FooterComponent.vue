@@ -4,6 +4,6 @@
       <li class="mx-3"><router-link to="/terms/">利用規約</router-link></li>
       <li class="mx-3"><router-link to="/privacy-policy/">プライバシーポリシー</router-link></li>
     </ul>
-    <p class="text-center">&copy; 2023 <a href="https://www.resume.id/waterfox" target="_blank" rel="noopener">水狐</a>.</p>
+    <p class="text-center">&copy; 2023 <a href="https://twitter.com/Waterfox_skjp" target="_blank" rel="noopener">水狐</a> All rights reserved.</p>
   </footer>
 </template>
